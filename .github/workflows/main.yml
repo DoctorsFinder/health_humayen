@@ -10,7 +10,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
            node-version: '17'
-      - run: npm ci
+      - run: npm i
       - run: npm test
       - name: Cypress run
         uses: cypress-io/github-action@v2
