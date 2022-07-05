@@ -11,7 +11,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: ^14 
+          node-version: 16.11.41
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
