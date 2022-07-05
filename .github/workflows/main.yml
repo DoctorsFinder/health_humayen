@@ -10,8 +10,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
            node-version: '18'
-      - name: npm install
-        uses: health_humayen/action-npm-install@v1.2.1
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+         path: ~/.npm
+         key: npm-${{ hashFiles('package-lock.json') }}
+         restore-keys: npm-
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
