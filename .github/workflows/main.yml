@@ -14,6 +14,6 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           working-directory: ./backend
-          intsall: npm i
+          install: npm i
           build: npm run build
           start: npm start
