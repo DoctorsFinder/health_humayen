@@ -10,8 +10,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
            node-version: '18'
-      - run: npm install
-      - run: npm test
+      - name: npm install
+        uses: health_humayen/action-npm-install@v1.2.1
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
