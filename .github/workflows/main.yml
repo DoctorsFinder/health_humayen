@@ -9,12 +9,11 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v2
         with:
-           node-version: '14'
+           node-version: '16'
       - name: Install dependencies
         run: npm install
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          run: npm-install@v1
           build: npm run build
           start: npm start
