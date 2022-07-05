@@ -13,6 +13,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          run: cd frontend && npm i
+          working-directory: cd frontend && npm i
           build: npm run build
           start: npm start
