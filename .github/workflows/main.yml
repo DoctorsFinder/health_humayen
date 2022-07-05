@@ -9,10 +9,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      # and run all Cypress tests\
+      - run: cd frontend
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          working-directory: cd frontend && npm i
+          install: npm ci
           build: npm run build
           start: npm start
