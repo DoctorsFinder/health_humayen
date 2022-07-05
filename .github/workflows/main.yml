@@ -5,17 +5,22 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Install node
-        uses: actions/setup-node@v3
-        with:
-           node-version: '18'
-      - name: Cache dependencies
+        uses: actions/setup-node@v2
+      - name: Cache npm dependencies
         uses: actions/cache@v2
         with:
-         path: ~/.npm
-         key: npm-${{ hashFiles('package-lock.json') }}
-         restore-keys: npm-
+          path: '~/.npm'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Test tsc
+        run: npm run ts-compile-check
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
