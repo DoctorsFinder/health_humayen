@@ -11,7 +11,7 @@ jobs:
         with:
            node-version: '16'
       - name: Install dependencies
-        run: npm install
+        run: npm install --immutable --immutable-cache
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
