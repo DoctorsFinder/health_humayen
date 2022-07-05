@@ -15,5 +15,5 @@ jobs:
         with:
           working-directory: ./frontend
           install: npm i
-          build: false npm run build
+          build: npm run build
           start: npm start
