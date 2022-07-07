@@ -14,7 +14,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-         install: npm i -D cypress
          working-directory: ./frontend
          build: npm run build
          start: npm start
