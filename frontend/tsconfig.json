@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 {
   "compilerOptions": {
     "target": "es5",
@@ -22,5 +24,9 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-unused-vars": "off"
+  }
 }
